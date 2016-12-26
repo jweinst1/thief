@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
 
 //file for the env struct
+
+//null type for variable declaration and other
+type null struct {
+
+}
 
 type Env struct {
 	items map[string]interface{}
@@ -27,10 +31,12 @@ func (self *Env) set(key string, value interface{}) {
 	self.items[key] = value
 }
 
-func main() {
-	g := NewEnv()
-	g.set("foo", 4)
-	g.set("hello", false)
-	fmt.Println(g)
-
+func (self *Env) declare(key string) {
+	self.items[key] = null{}
 }
+
+func (self *Env) is_null(key string) bool {
+	_, ok := self.items[key].(null)
+	return ok
+}
+

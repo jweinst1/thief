@@ -20,5 +20,8 @@ func main() {
     str := string(b) // convert content to a 'string'
 
     fmt.Println(str) // print the content as a 'string'
-    //fmt.Println(Byte_to_i([]byte{0, 0, 0, 14}))
+    test := NewEnv()
+    test.set("f", 3)
+    test.declare("d")
+    fmt.Println(test)
 }
