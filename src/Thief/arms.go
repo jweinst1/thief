@@ -1,6 +1,5 @@
 package main
 
-import "fmt"
 
 //subregisters with specialized behavior
 //these are called arms
@@ -24,7 +23,3 @@ func (self *Printarm) print(){
 }
 
 
-
-func main(){
-	
-}

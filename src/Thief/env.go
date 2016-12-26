@@ -4,7 +4,7 @@ package main
 //file for the env struct
 
 //null type for variable declaration and other
-type null struct {
+type Null struct {
 
 }
 
@@ -31,12 +31,17 @@ func (self *Env) set(key string, value interface{}) {
 	self.items[key] = value
 }
 
+func (self *Env) contains(key string) bool {
+	_, has := self.items[key]
+	return has
+}
+
 func (self *Env) declare(key string) {
-	self.items[key] = null{}
+	self.items[key] = Null{}
 }
 
 func (self *Env) is_null(key string) bool {
-	_, ok := self.items[key].(null)
+	_, ok := self.items[key].(Null)
 	return ok
 }
 
