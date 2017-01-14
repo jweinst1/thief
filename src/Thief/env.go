@@ -3,10 +3,7 @@ package main
 
 //file for the env struct
 
-//null type for variable declaration and other
-type Null struct {
 
-}
 
 type Env struct {
 	items map[string]interface{}
@@ -43,5 +40,10 @@ func (self *Env) declare(key string) {
 func (self *Env) is_null(key string) bool {
 	_, ok := self.items[key].(Null)
 	return ok
+}
+
+//deletes an item from storage
+func (self *Env) del(key string) {
+	delete(self.items, key)
 }
 

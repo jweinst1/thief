@@ -10,18 +10,11 @@ func main() {
   //gets command line args
 	userArgs := os.Args[1:]
 
-    b, err := ioutil.ReadFile(userArgs[0]) // just pass the file name
+    bytes, err := ioutil.ReadFile(userArgs[0]) // just pass the file name
     if err != nil {
         fmt.Print(err)
     }
+    machine := NewEnv()
+    ReadBytes(machine, bytes)
 
-    fmt.Println(b) // print the content as 'bytes'
-
-    str := string(b) // convert content to a 'string'
-
-    fmt.Println(str) // print the content as a 'string'
-    test := NewEnv()
-    test.set("f", 3)
-    test.declare("d")
-    fmt.Println(test)
 }

@@ -13,3 +13,14 @@ func Byte_to_i(in []byte) int {
 func Byte_to_s(in []byte) string {
 	return string(in)
 }
+
+func Byte_to_b(in []byte) bool {
+	switch in[0] {
+	case 0:
+		return false
+	case 1:
+		return true
+	default:
+		panic("Invalid Bool value")
+	}
+}
