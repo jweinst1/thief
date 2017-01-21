@@ -1,10 +1,10 @@
 package main
 
-/*import (
+import (
    "fmt"
-   "io/ioutil"
-   "os"
-)*/
+   //"io/ioutil"
+   //"os"
+)
 
 func main() {
   //gets command line args
@@ -15,7 +15,10 @@ func main() {
         fmt.Print(err)
     }
     fmt.Println(bytes)*/
-    machine := NewEnv()
-    ReadBytes(machine, []byte{1, 55, 55, 55, 0})
+    iter := NewByteStream([]byte{44, 55, 55, 66, 47})
+    b, ok := iter.next()
+    for ;ok; {
+      
+    }
 
 }

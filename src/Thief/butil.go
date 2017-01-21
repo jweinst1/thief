@@ -24,3 +24,24 @@ func Byte_to_b(in []byte) bool {
 		panic("Invalid Bool value")
 	}
 }
+
+//struct that acts as an iterator for a byte stream
+type ByteStream struct {
+	bytes []byte
+	i int
+	done bool
+}
+
+func NewByteStream(lst []byte) ByteStream {
+	return ByteStream{lst, 0, false}
+}
+
+func (self *ByteStream) next() (byte, bool) {
+	if self.done {
+		return (byte(0), true)
+	} else {
+		new_b := (self.bytes[self.i++], false)
+		if self.i == len(self.bytes) {self.done = true}
+		return new_b
+	}
+}
