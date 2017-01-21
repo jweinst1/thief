@@ -1,8 +1,8 @@
 package main
 
-import (
-   "fmt"
-)
+import "fmt"
+
+
 //file for machine functions and operations
 
 //prints string format of some bytes
